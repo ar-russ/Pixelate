@@ -25,7 +25,7 @@ def generate_brick_tiles(image_size: tuple, brick_size: int = 16) -> Image:
     return image
 
 
-def pixelate(image: Image, pixel_size: int = 16):
+def pixelate(image: Image, pixel_size: int = 16) -> Image:
     '''
     Добавляет на картинку image эффект мозайки (пикселизации).
         Параметры:
@@ -37,7 +37,7 @@ def pixelate(image: Image, pixel_size: int = 16):
     return image.convert("RGBA")
 
 
-def generate_and_save_image(input_image, input_pixel_size):
+def generate_and_save_image(input_image: Image, input_pixel_size, int) -> Image:
     '''
     Генерирует картинку, накладывая на нее эффект пикселизации и текстуру
     кубиков конструктора, после чего сохраняет в корневой папке.
@@ -73,7 +73,7 @@ def main():
     result.show()
 
 
-def is_config_valid():
+def is_config_valid() -> bool:
     if search_path != '' and search_path[-1] != "/":
         print("Пожалуйста, поставьте в конце путя search_path в файле base/config.ini символ '/'")
         return False
